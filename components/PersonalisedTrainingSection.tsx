@@ -50,7 +50,7 @@ export default function PersonalisedTrainingSection() {
             </p>
             <h2
               id="personalised-heading"
-              className="text-3xl sm:text-4xl font-extrabold text-brand-purple leading-tight mb-5"
+              className="text-3xl sm:text-4xl font-extrabold text-brand-purple leading-tight mb-5 font-nunito"
             >
               Personalised Individual Training
             </h2>

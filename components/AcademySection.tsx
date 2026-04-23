@@ -4,85 +4,77 @@ import Link from "next/link";
 const courses = [
   "Business Analysis",
   "Design Thinking",
-  "Product Management",
-  "Data Analytics",
-  "Cybersecurity Fundamentals",
-  "Cloud Computing",
+  "Effective Communication",
+  "Entrepreneurship",
+  "Career Development",
+  "Business Model",
 ];
 
 export default function AcademySection() {
   return (
     <section
-      id="tg-academy"
-      className="py-20 bg-white"
+      id="what-we-do"
+      className="py-20 bg-[#F3F0F4]"
       aria-labelledby="academy-heading"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          {/* Text */}
-          <div className="flex-1 order-2 lg:order-1">
-            <p className="text-brand-red font-semibold text-sm uppercase tracking-widest mb-3">
-              Learning Management System
-            </p>
+      <div className="mx-[64px] h-[664px]">
+        <div className="flex flex-col lg:flex-row items-center gap-12 ">
+          {/* Circular Image (Left on Desktop) */}
+          <div className="flex-shrink-0 order-1">
+            <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[500px] lg:h-[500px] rounded-full overflow-hidden shadow-xl">
+              <Image
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80"
+                alt="Two professionals collaborating"
+                fill
+                className="object-cover md:w-[556.88px] md:h-[568px]"
+              // sizes="(max-width: 768px) 288px, (max-width: 1024px) 384px, 500px"
+              />
+            </div>
+          </div>
+
+          {/* Text Content (Right on Desktop) */}
+          <div className="flex-1 order-2">
             <h2
               id="academy-heading"
-              className="text-3xl sm:text-4xl font-extrabold text-brand-purple leading-tight mb-5"
+              className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-[#661E4E] leading-tight mb-8 font-nunito"
             >
-              TG Academy
+              Learning Management System
             </h2>
-            <p className="text-gray-600 leading-relaxed mb-8 max-w-lg">
-              TG Academy is our cutting-edge learning management platform
-              designed to upskill professionals with in-demand technology and
-              business skills. Access world-class courses taught by industry
-              experts at your own pace.
-            </p>
 
-            <ul className="space-y-3 mb-10" role="list">
-              {courses.map((course) => (
-                <li key={course} className="flex items-center gap-3">
-                  <span
-                    className="w-5 h-5 rounded-full bg-brand-purple/10 flex items-center justify-center flex-shrink-0"
-                    aria-hidden="true"
-                  >
-                    <svg
-                      className="w-3 h-3 text-brand-purple"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <span className="text-gray-700 font-medium text-sm">{course}</span>
-                </li>
-              ))}
-            </ul>
+            {/* Description Box */}
+            <div className="bg-[#E6DFE5] p-6 sm:p-10 rounded-2xl mb-8">
+              <p className="text-gray-800 text-sm sm:text-base leading-relaxed mb-8">
+                TG Academy is a hub of knowledge and skill-building resources designed to
+                empower tech talents on their learning journey. From technical courses
+                covering the latest programming languages and development frameworks to
+                soft skills training in leadership, effective communication and project
+                management, TG Academy offers a wide range of courses to cater to diverse
+                learning needs. With accessible and interactive learning materials, individuals
+                can enhance their skills and stay ahead in today&apos;s competitive tech landscape.
+              </p>
+
+              <h3 className="text-[#661E4E] font-bold text-base mb-4">
+                Some of our courses include:
+              </h3>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-4 text-xs sm:text-sm font-medium text-gray-800" role="list">
+                {courses.map((course) => (
+                  <li key={course} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-black flex-shrink-0" aria-hidden="true" />
+                    {course}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
             <Link
               href="#"
-              className="inline-flex items-center gap-2 px-7 py-3 rounded-lg bg-brand-purple text-white font-bold text-sm hover:opacity-90 transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-brand-purple focus:ring-offset-2"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-[#661E4E] text-white font-bold text-sm hover:opacity-90 transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-[#661E4E] focus:ring-offset-2"
             >
               Learn More
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 7l-10 10M17 7H7M17 7v10" />
               </svg>
             </Link>
-          </div>
-
-          {/* Circular Image */}
-          <div className="flex-shrink-0 order-1 lg:order-2">
-            <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-8 border-brand-purple/10 shadow-2xl">
-              <Image
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80"
-                alt="Students collaborating and learning in TG Academy"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
-              />
-            </div>
           </div>
         </div>
       </div>

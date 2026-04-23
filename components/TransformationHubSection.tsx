@@ -50,7 +50,7 @@ export default function TransformationHubSection() {
             </p>
             <h2
               id="transformation-heading"
-              className="text-3xl sm:text-4xl font-extrabold text-brand-purple leading-tight mb-5"
+              className="text-3xl sm:text-4xl font-extrabold text-brand-purple leading-tight mb-5 font-nunito"
             >
               Transformation Hub with Jite Newton
             </h2>

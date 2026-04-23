@@ -37,7 +37,7 @@ export default function CorporateTrainingsSection() {
             </p>
             <h2
               id="corporate-heading"
-              className="text-3xl sm:text-4xl font-extrabold text-brand-purple leading-tight mb-5"
+              className="text-3xl sm:text-4xl font-extrabold text-brand-purple leading-tight mb-5 font-nunito"
             >
               Corporate Trainings
             </h2>

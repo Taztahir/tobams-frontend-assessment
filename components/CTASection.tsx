@@ -3,14 +3,14 @@ import Link from "next/link";
 export default function CTASection() {
   return (
     <section
-      id="cta"
-      className="py-24 bg-brand-purple"
+      id="book-consultation"
+      className="py-24 bg-[#11020B]"
       aria-labelledby="cta-heading"
     >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="mx-[64px] text-center">
         <h2
           id="cta-heading"
-          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6"
+          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6 font-nunito"
         >
           Let&apos;s work together to build something extraordinary
         </h2>

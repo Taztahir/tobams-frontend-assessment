@@ -1,143 +1,131 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const testimonials = [
   {
-    id: 1,
     name: "Aisha Yusuf",
-    role: "Product Manager, Fintech Startup",
-    quote:
-      "The TG Academy programme completely transformed how I approach product strategy. The facilitators were world-class and the curriculum was directly applicable to my day-to-day work.",
-    initials: "AY",
+    role: "Founder, CraftHub NG",
+    content: (
+      <>
+        Working with <span className="font-bold">Tobams Group</span> on our website was a <span className="font-bold">breeze</span>. They <span className="font-bold">understood</span> our vision and transformed it into a beautiful <span className="font-bold">online space</span>. Highly recommend their <span className="font-bold">Website Design</span> service!
+      </>
+    ),
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
   },
   {
-    id: 2,
     name: "John Davies",
-    role: "Head of Operations, Multinational Corp",
-    quote:
-      "Tobams Group's Corporate Training programme delivered measurable results for our team. Employee satisfaction scores jumped 40% within three months of completing the training.",
-    initials: "JD",
+    role: "Marketing Manager, E-Commerce Emporium",
+    content: (
+      <>
+        Tobams Group&apos;s Digital Marketing strategies gave our brand the <span className="font-bold">boost it needed</span>. Simple yet powerful <span className="font-bold">techniques</span> that delivered <span className="font-bold">tangible results</span>. A pleasure to collaborate with!
+      </>
+    ),
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
   },
   {
-    id: 3,
-    name: "Ngozi Okafor",
-    role: "Independent Consultant",
-    quote:
-      "Training The Consultant gave me the frameworks and confidence I needed to launch my consulting practice. Within 6 months I had signed my first three clients.",
-    initials: "NO",
+    name: "Chinonso Nwankwo",
+    role: "HR Director, FutureTech Solutions",
+    content: (
+      <>
+        Tobams Group has been <span className="font-bold">instrumental</span> in our talent <span className="font-bold">acquisition</span> journey. Their Tech Talent Solution service consistently connects us with the <span className="font-bold">right professionals</span>. Reliable and <span className="font-bold">straightforward</span>.
+      </>
+    ),
+    avatar: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&q=80",
   },
   {
-    id: 4,
-    name: "Emeka Adeyemi",
-    role: "Senior Manager, Banking Sector",
-    quote:
-      "The Management Development Programme was a game changer. I now lead with clarity and purpose. My team's performance has never been stronger.",
-    initials: "EA",
+    name: "Sarah Jenkins",
+    role: "CEO, TechInnovate",
+    content: (
+      <>
+        The <span className="font-bold">Transformation Hub</span> provided exactly the <span className="font-bold">strategic edge</span> we were looking for. Their team is <span className="font-bold">exceptionally skilled</span> and dedicated to client <span className="font-bold">success</span>.
+      </>
+    ),
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
   },
 ];
 
 export default function TestimonialsSection() {
-  const [active, setActive] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(3);
 
-  const prev = () => setActive((a) => (a === 0 ? testimonials.length - 1 : a - 1));
-  const next = () => setActive((a) => (a === testimonials.length - 1 ? 0 : a + 1));
+  // Update items per view based on window size
+  useEffect(() => {
+    const updateItemsPerView = () => {
+      if (window.innerWidth < 768) setItemsPerView(1);
+      else if (window.innerWidth < 1024) setItemsPerView(2);
+      else setItemsPerView(3);
+    };
+    updateItemsPerView();
+    window.addEventListener("resize", updateItemsPerView);
+    return () => window.removeEventListener("resize", updateItemsPerView);
+  }, []);
 
-  const t = testimonials[active];
+  const maxIndex = Math.max(0, testimonials.length - itemsPerView);
+
+  const next = () => setActiveIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  const prev = () => setActiveIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
 
   return (
-    <section
-      id="testimonials"
-      className="py-20 bg-white"
-      aria-labelledby="testimonials-heading"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <p className="text-brand-red font-semibold text-sm uppercase tracking-widest mb-3">
-            What People Say
-          </p>
-          <h2
-            id="testimonials-heading"
-            className="text-3xl sm:text-4xl font-extrabold text-brand-purple"
-          >
-            Testimonials
-          </h2>
-        </div>
+    <section id="testimonials" className="py-24 bg-white overflow-hidden">
+      <div className="mx-[64px]">
+        <h2 className="text-5xl font-bold text-center mb-20 font-nunito text-[#1A1A1A]">Testimonials</h2>
 
-        {/* Cards row – desktop */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {testimonials.map((t) => (
-            <article
-              key={t.id}
-              className="flex flex-col gap-5 p-6 rounded-xl border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow duration-200"
-            >
-              <svg
-                className="w-8 h-8 text-brand-red/40"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
+        <div className="relative">
+          {/* Slider Container */}
+          <div 
+            className="flex transition-transform duration-500 ease-out gap-8"
+            style={{ transform: `translateX(-${activeIndex * (100 / itemsPerView)}%)`, width: `${(testimonials.length / itemsPerView) * 100}%` }}
+          >
+            {testimonials.map((t, i) => (
+              <div 
+                key={i}
+                className="bg-white p-10 rounded-[40px] border-l-2 border-t-2 border-[#EF4353] shadow-[0_10px_40px_rgba(0,0,0,0.04)] relative transition-all hover:shadow-lg"
+                style={{ width: `calc(${100 / testimonials.length}% - 2rem)` }}
               >
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-              </svg>
-              <p className="text-gray-600 text-sm leading-relaxed flex-1">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-              <div className="flex items-center gap-3 mt-auto">
-                <span className="w-10 h-10 rounded-full bg-brand-purple flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-                  {t.initials}
-                </span>
-                <div>
-                  <p className="font-bold text-brand-purple text-sm">{t.name}</p>
-                  <p className="text-gray-500 text-xs">{t.role}</p>
+                {/* Header: Avatar + Info */}
+                <div className="flex items-center gap-5 mb-8">
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden border-[6px] border-[#FFD233]">
+                    <Image
+                      src={t.avatar}
+                      alt={t.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-[#1A1A1A] text-lg">{t.name}</h3>
+                    <p className="text-[#666666] text-sm">{t.role}</p>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="text-[#333333] text-base leading-relaxed">
+                  {t.content}
                 </div>
               </div>
-            </article>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* Carousel – mobile */}
-        <div className="md:hidden">
-          <article className="flex flex-col gap-5 p-6 rounded-xl border border-gray-100 bg-white shadow-md">
-            <svg className="w-8 h-8 text-brand-red/40" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-            </svg>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              &ldquo;{t.quote}&rdquo;
-            </p>
-            <div className="flex items-center gap-3">
-              <span className="w-10 h-10 rounded-full bg-brand-purple flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-                {t.initials}
-              </span>
-              <div>
-                <p className="font-bold text-brand-purple text-sm">{t.name}</p>
-                <p className="text-gray-500 text-xs">{t.role}</p>
-              </div>
-            </div>
-          </article>
-
-          {/* Carousel controls */}
-          <div className="flex items-center justify-center gap-4 mt-6">
-            <button
-              type="button"
+          {/* Carousel Controls */}
+          <div className="flex justify-end gap-4 mt-12 px-4">
+            <button 
               onClick={prev}
+              className="w-10 h-10 rounded-lg bg-[#FFF1F2] flex items-center justify-center text-[#EF4353] hover:bg-[#FFE4E6] transition-colors shadow-sm"
               aria-label="Previous testimonial"
-              className="w-10 h-10 rounded-full border border-brand-purple text-brand-purple flex items-center justify-center hover:bg-brand-purple hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-purple"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
               </svg>
             </button>
-            <span className="text-sm text-gray-500" aria-live="polite">
-              {active + 1} / {testimonials.length}
-            </span>
-            <button
-              type="button"
+            <button 
               onClick={next}
+              className="w-10 h-10 rounded-lg bg-[#FFF1F2] flex items-center justify-center text-[#EF4353] hover:bg-[#FFE4E6] transition-colors shadow-sm"
               aria-label="Next testimonial"
-              className="w-10 h-10 rounded-full border border-brand-purple text-brand-purple flex items-center justify-center hover:bg-brand-purple hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-purple"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
               </svg>
             </button>
           </div>

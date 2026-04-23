@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AcademySectionImage from '../public/AcedemySectionImage.jpg';
 
 const courses = [
   "Business Analysis",
@@ -17,13 +18,13 @@ export default function AcademySection() {
       className="py-20 bg-[#F3F0F4]"
       aria-labelledby="academy-heading"
     >
-      <div className="mx-[64px] h-[664px]">
+      <div className="mx-6 sm:mx-12 lg:mx-[64px] min-h-[664px]">
         <div className="flex flex-col lg:flex-row items-center gap-12 ">
           {/* Circular Image (Left on Desktop) */}
           <div className="flex-shrink-0 order-1">
             <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[500px] lg:h-[500px] rounded-full overflow-hidden shadow-xl">
               <Image
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80"
+                src={AcademySectionImage}
                 alt="Two professionals collaborating"
                 fill
                 className="object-cover md:w-[556.88px] md:h-[568px]"

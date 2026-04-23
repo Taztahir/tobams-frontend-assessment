@@ -1,66 +1,91 @@
 import Image from "next/image";
 
-const benefits = [
-  "Customised training programs for your team",
-  "Expert facilitators with industry experience",
-  "Interactive workshops and hands-on learning",
-  "Measurable performance outcomes",
-  "Flexible scheduling for corporate teams",
-];
+const LightningIcon = () => (
+  <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+  </svg>
+);
 
-export default function CorporateTrainingsSection() {
+const Section = ({ title, description, list, image, reverse = false }: { title: string, description: string, list: string[], image: string, reverse?: boolean }) => (
+  <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20 mb-24 last:mb-0`}>
+    {/* Content Column */}
+    <div className="flex-1">
+      <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#1A1A1A] mb-6 font-nunito">{title}</h2>
+      <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl">
+        {description}
+      </p>
+      <ul className="space-y-3">
+        {list.map((item) => (
+          <li key={item} className="flex items-center gap-3">
+            <LightningIcon />
+            <span className="text-gray-800 text-sm sm:text-base font-medium">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {/* Image Column */}
+    <div className="w-full lg:w-1/2">
+      <div className="relative aspect-[16/10] rounded-[32px] overflow-hidden shadow-lg">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover"
+        />
+      </div>
+    </div>
+  </div>
+);
+
+export default function TrainingServices() {
   return (
-    <section
-      id="corporate-trainings"
-      className="py-20 bg-gray-50"
-      aria-labelledby="corporate-heading"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          {/* Image */}
-          <div className="flex-shrink-0 w-full lg:w-1/2">
-            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80"
-                alt="Professionals engaged in a corporate training workshop"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-          </div>
+    <section id="corporate-training" className="py-24 bg-white">
+      <div className="mx-6 sm:mx-12 lg:mx-[64px]">
+        {/* Corporate Trainings */}
+        <Section 
+          title="Corporate Trainings"
+          description="Empower your team with our customised Corporate Training programs designed to address the unique needs and objectives of your organisation. Our expert facilitators work closely with your team to deliver tailored learning experiences that align with your company's goals and values."
+          list={[
+            "Leadership Training",
+            "Strategic Planning and Implementation",
+            "Project Management",
+            "Sustainability Training",
+            "Customised Training"
+          ]}
+          image="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80"
+        />
 
-          {/* Text */}
-          <div className="flex-1">
-            <p className="text-brand-red font-semibold text-sm uppercase tracking-widest mb-3">
-              Enterprise Solutions
-            </p>
-            <h2
-              id="corporate-heading"
-              className="text-3xl sm:text-4xl font-extrabold text-brand-purple leading-tight mb-5 font-nunito"
-            >
-              Corporate Trainings
-            </h2>
-            <p className="text-gray-600 leading-relaxed mb-8">
-              We partner with organisations to design and deliver bespoke
-              training programmes that address specific skill gaps, drive
-              productivity, and align with your strategic business goals.
-            </p>
+        {/* Personalised Individual Training */}
+        <Section 
+          title="Personalised Individual Training"
+          description="Begin a journey of lifelong learning and professional development with Tobams Group's diverse range of training programs for individuals. From technical skills mastery to soft skills enhancement, our courses cover a wide spectrum of topics to meet the evolving needs of today's professionals."
+          list={[
+            "Leadership Development",
+            "Soft Skills Development",
+            "Industry Specific Knowledge",
+            "Technical Skills Enhancement",
+            "Time Management and Productivity",
+            "Career Development"
+          ]}
+          image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80"
+          reverse
+        />
 
-            <ul className="space-y-4" role="list">
-              {benefits.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-brand-purple flex items-center justify-center" aria-hidden="true">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                  <span className="text-gray-700 text-sm leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        {/* Capacity Development */}
+        <Section 
+          title="Capacity Development"
+          description="At Tobams Group, we empower individuals and organizations through tailored training programs, expert-led workshops, and personalized mentorship. We are committed to your success and growth. We are dedicated to providing a comprehensive suite of benefits designed to foster your development and success:"
+          list={[
+            "Tailored Training Programs",
+            "Expert-Led Workshops",
+            "Personalized Mentorship",
+            "Technical Skills Enhancement",
+            "Collaborative Learning Environment",
+            "Ongoing Support and Resources"
+          ]}
+          image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+        />
       </div>
     </section>
   );

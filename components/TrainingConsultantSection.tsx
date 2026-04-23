@@ -5,7 +5,7 @@ export default function TrainingConsultantSection() {
       className="py-20 bg-gray-50"
       aria-labelledby="consultant-heading"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-6 sm:mx-12 lg:mx-[64px]">
         <div className="text-center mb-14">
           <p className="text-brand-red font-semibold text-sm uppercase tracking-widest mb-3">
             Consultant Development

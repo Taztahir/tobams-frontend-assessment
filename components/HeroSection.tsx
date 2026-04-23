@@ -23,8 +23,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
 
       {/* Content */}
-      <div className="relative z-10 mx-[64px] w-full flex flex-col items-center text-center">
-        <div className="max-w-4xl flex flex-col items-center gap-4">
+      <div className="relative z-10 mx-6 sm:mx-12 lg:mx-[64px] w-full flex flex-col items-center text-center">
+        <div className="mx-6 sm:mx-12 lg:mx-[64px] flex flex-col items-center gap-4">
           {/* Pill label */}
           <span className="inline-flex items-center px-8 py-3 rounded-full bg-[#2A2A2A]/80 backdrop-blur-sm text-white text-xs font-semibold uppercase tracking-widest mb-2">
             What We Do

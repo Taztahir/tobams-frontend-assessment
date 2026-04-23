@@ -20,8 +20,8 @@ const LightningIcon = () => (
 
 export default function ManagementDevelopmentSection() {
   return (
-    <section className="py-24 bg-white">
-      <div className="mx-[64px]">
+    <section id="management-development" className="py-24 bg-white">
+      <div className="mx-6 sm:mx-12 lg:mx-[64px]">
         {/* Main Dark Container */}
         <div className="bg-[#1A0713] rounded-[32px] overflow-hidden p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
 

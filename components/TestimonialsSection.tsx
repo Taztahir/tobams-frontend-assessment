@@ -69,7 +69,7 @@ export default function TestimonialsSection() {
 
   return (
     <section id="testimonials" className="py-24 bg-white overflow-hidden">
-      <div className="mx-[64px]">
+      <div className="mx-6 sm:mx-12 lg:mx-[64px]">
         <h2 className="text-5xl font-bold text-center mb-20 font-nunito text-[#1A1A1A]">Testimonials</h2>
 
         <div className="relative">

@@ -7,7 +7,7 @@ export default function CTASection() {
       className="py-24 bg-[#11020B]"
       aria-labelledby="cta-heading"
     >
-      <div className="mx-[64px] text-center">
+      <div className="mx-6 sm:mx-12 lg:mx-[64px] text-center">
         <h2
           id="cta-heading"
           className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6 font-nunito"

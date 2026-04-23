@@ -1,7 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import AcademySection from "@/components/AcademySection";
 import CorporateTrainingsSection from "@/components/CorporateTrainingsSection";
-import PersonalisedTrainingSection from "@/components/PersonalisedTrainingSection";
 import ManagementDevelopmentSection from "@/components/ManagementDevelopmentSection";
 import TransformationHubSection from "@/components/TransformationHubSection";
 import TrainingConsultantSection from "@/components/TrainingConsultantSection";
@@ -14,7 +13,6 @@ export default function Home() {
       <HeroSection />
       <AcademySection />
       <CorporateTrainingsSection />
-      <PersonalisedTrainingSection />
       <ManagementDevelopmentSection />
       <TransformationHubSection />
       <TrainingConsultantSection />

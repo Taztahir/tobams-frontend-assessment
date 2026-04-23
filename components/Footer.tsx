@@ -38,7 +38,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#11020B] text-white">
       {/* Top CTA Section */}
-      <div className="mx-[64px] py-10 flex flex-col md:flex-row items-center justify-between gap-6 border-b border-white/10">
+      <div className="mx-6 sm:mx-12 lg:mx-[64px] py-10 flex flex-col md:flex-row items-center justify-between gap-6 border-b border-white/10">
         <div className="text-center md:text-left">
           <p className="text-sm font-medium text-white/70 mb-2">Ready to be a part of something extraordinary?</p>
           <h2 className="text-2xl sm:text-3xl font-bold font-nunito">Let&apos;s work together to create a difference</h2>
@@ -51,7 +51,7 @@ export default function Footer() {
         </Link>
       </div>
 
-      <div className="mx-[64px] py-16">
+      <div className="mx-6 sm:mx-12 lg:mx-[64px] py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Info */}
           <div className="space-y-6">

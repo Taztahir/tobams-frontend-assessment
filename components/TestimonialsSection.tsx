@@ -74,12 +74,12 @@ export default function TestimonialsSection() {
 
         <div className="relative">
           {/* Slider Container */}
-          <div 
+          <div
             className="flex transition-transform duration-500 ease-out gap-8"
             style={{ transform: `translateX(-${activeIndex * (100 / itemsPerView)}%)`, width: `${(testimonials.length / itemsPerView) * 100}%` }}
           >
             {testimonials.map((t, i) => (
-              <div 
+              <div
                 key={i}
                 className="bg-white p-10 rounded-[40px] border-l-2 border-t-2 border-[#EF4353] shadow-[0_10px_40px_rgba(0,0,0,0.04)] relative transition-all hover:shadow-lg"
                 style={{ width: `calc(${100 / testimonials.length}% - 2rem)` }}
@@ -110,7 +110,7 @@ export default function TestimonialsSection() {
 
           {/* Carousel Controls */}
           <div className="flex justify-end gap-4 mt-12 px-4">
-            <button 
+            <button
               onClick={prev}
               className="w-10 h-10 rounded-lg bg-[#FFF1F2] flex items-center justify-center text-[#EF4353] hover:bg-[#FFE4E6] transition-colors shadow-sm"
               aria-label="Previous testimonial"
@@ -119,7 +119,7 @@ export default function TestimonialsSection() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
               </svg>
             </button>
-            <button 
+            <button
               onClick={next}
               className="w-10 h-10 rounded-lg bg-[#FFF1F2] flex items-center justify-center text-[#EF4353] hover:bg-[#FFE4E6] transition-colors shadow-sm"
               aria-label="Next testimonial"

@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <header className="w-full bg-white relative z-50 shadow-sm">
       {/* Top Tier */}
-      <div className="md:mx-[64px] mx-[24px] py-6 flex items-center justify-between">
+      <div className="mx-6 sm:mx-12 lg:mx-[64px] py-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <Image
@@ -30,7 +30,7 @@ export default function Navbar() {
             width={160}
             height={44}
             priority
-            className="h-16 w-[165px] object-contain scale-170"
+            className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
           />
         </Link>
 
@@ -69,7 +69,7 @@ export default function Navbar() {
 
       {/* Bottom Tier (Desktop) */}
       <div className="hidden lg:block border-t-2 border-[#DDD0DA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-6 sm:mx-12 lg:mx-[64px]">
           <nav className="flex items-center justify-center gap-8 py-5 overflow-x-auto no-scrollbar">
             {navLinks.map((link) => (
               <Link
@@ -95,7 +95,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`md:hidden absolute top-full left-0 w-full bg-white shadow-xl transition-all duration-300 origin-top ${isMenuOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"}`}
+        className={`lg:hidden absolute top-full left-0 w-full bg-white shadow-xl transition-all duration-300 origin-top ${isMenuOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"}`}
       >
         <nav className="px-6 py-8 space-y-6">
           <ul className="space-y-4">

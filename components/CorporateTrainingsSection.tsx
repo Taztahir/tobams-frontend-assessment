@@ -7,25 +7,14 @@ const LightningIcon = () => (
 );
 
 const Section = ({ title, description, list, image, reverse = false }: { title: string, description: string, list: string[], image: string, reverse?: boolean }) => (
-  <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20 mb-24 last:mb-0`}>
-    {/* Content Column */}
-    <div className="flex-1">
-      <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#1A1A1A] mb-6 font-nunito">{title}</h2>
-      <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl">
-        {description}
-      </p>
-      <ul className="space-y-3">
-        {list.map((item) => (
-          <li key={item} className="flex items-center gap-3">
-            <LightningIcon />
-            <span className="text-gray-800 text-sm sm:text-base font-medium">{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+  <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 lg:gap-20 mb-24 last:mb-0`}>
+    {/* Mobile Heading */}
+    <h2 className="lg:hidden text-2xl sm:text-3xl font-bold text-[#1A1A1A] font-nunito text-center">
+      {title}
+    </h2>
 
     {/* Image Column */}
-    <div className="w-full lg:w-1/2">
+    <div className="w-full lg:w-1/2 order-1 lg:order-none">
       <div className="relative aspect-[16/10] rounded-[32px] overflow-hidden shadow-lg">
         <Image
           src={image}
@@ -34,6 +23,24 @@ const Section = ({ title, description, list, image, reverse = false }: { title: 
           className="object-cover"
         />
       </div>
+    </div>
+
+    {/* Content Column */}
+    <div className="flex-1 order-2 lg:order-none">
+      <h2 className="hidden lg:block text-[40px] font-bold text-[#1A1A1A] mb-6 font-nunito leading-tight">
+        {title}
+      </h2>
+      <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl text-center lg:text-left">
+        {description}
+      </p>
+      <ul className="space-y-4 max-w-lg mx-auto lg:mx-0">
+        {list.map((item) => (
+          <li key={item} className="flex items-center gap-3">
+            <LightningIcon />
+            <span className="text-gray-800 text-sm sm:text-base font-medium">{item}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   </div>
 );

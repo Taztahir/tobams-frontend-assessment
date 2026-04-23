@@ -19,25 +19,31 @@ export default function AcademySection() {
       aria-labelledby="academy-heading"
     >
       <div className="mx-6 sm:mx-12 lg:mx-[64px] min-h-[664px]">
+        {/* Mobile Heading */}
+        <h2
+          id="academy-heading"
+          className="lg:hidden text-3xl sm:text-4xl font-extrabold text-[#661E4E] leading-tight mb-8 font-nunito text-center"
+        >
+          Learning Management System
+        </h2>
+
         <div className="flex flex-col lg:flex-row items-center gap-12 ">
-          {/* Circular Image (Left on Desktop) */}
-          <div className="flex-shrink-0 order-1">
+          {/* Circular Image */}
+          <div className="flex-shrink-0 order-1 lg:order-1 mx-auto">
             <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[500px] lg:h-[500px] rounded-full overflow-hidden shadow-xl">
               <Image
                 src={AcademySectionImage}
                 alt="Two professionals collaborating"
                 fill
-                className="object-cover md:w-[556.88px] md:h-[568px]"
-              // sizes="(max-width: 768px) 288px, (max-width: 1024px) 384px, 500px"
+                className="object-cover"
               />
             </div>
           </div>
 
-          {/* Text Content (Right on Desktop) */}
-          <div className="flex-1 order-2">
+          {/* Text Content */}
+          <div className="flex-1 order-2 lg:order-2">
             <h2
-              id="academy-heading"
-              className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-[#661E4E] leading-tight mb-8 font-nunito"
+              className="hidden lg:block text-[40px] font-extrabold text-[#661E4E] leading-tight mb-8 font-nunito"
             >
               Learning Management System
             </h2>

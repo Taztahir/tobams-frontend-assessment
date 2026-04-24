@@ -22,13 +22,13 @@ export default function TransformationHubSection() {
     <section id="transformation-hub" className="py-24 bg-white">
       <div className="mx-6 sm:mx-12 lg:mx-[64px]">
         {/* Main Light Pink Container */}
-        <div className="bg-[#FCE7E8] rounded-[32px] p-8 sm:p-12 lg:p-16">
+        <div className="bg-[#FCE7E8] rounded-[32px] p-6 lg:p-[40px]">
           {/* Header Area */}
           <div className="mb-10">
             <p className="text-[#0046FF] font-medium italic mb-2">
               Learning With Our CEO:
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#4B0D37] font-nunito leading-tight mb-6">
+            <h2 className="text-[20px] lg:text-[40px] font-semibold md:font-bold text-[#4B0D37] font-nunito leading-tight mb-6">
               Transformation Hub With Jite Newton
             </h2>
             <p className="text-gray-800 text-sm sm:text-base leading-relaxed max-w-5xl">
@@ -52,7 +52,7 @@ export default function TransformationHubSection() {
 
             {/* Right: Benefits Grid & Button */}
             <div className="flex-1 w-full">
-              <div className="bg-[#F9D6D9] rounded-[24px] p-6 sm:p-8">
+              <div className="bg-[#FFFFFF4D] rounded-[8px] p-5 sm:p-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                   {benefits.map((benefit) => (
                     <div
@@ -60,7 +60,7 @@ export default function TransformationHubSection() {
                       className="bg-white p-4 rounded-xl flex items-center gap-3 shadow-sm"
                     >
                       <PurpleBolt />
-                      <span className="text-gray-800 font-medium text-sm sm:text-base whitespace-nowrap">
+                      <span className="text-gray-800 font-medium text-[14px] md:text-[18px] whitespace-nowrap">
                         {benefit}
                       </span>
                     </div>

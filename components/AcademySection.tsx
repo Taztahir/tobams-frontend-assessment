@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import AcademySectionImage from '../public/AcedemySectionImage.jpg';
+import AcademySectionImage from '../public/AcademySectionImage.jpg';
 
 const courses = [
   "Business Analysis",

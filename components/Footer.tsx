@@ -36,25 +36,25 @@ const solution = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#11020B] text-white">
-      <div className="mx-6 sm:mx-12 lg:mx-[64px]">
+    <footer className="text-white">
+      <div className=" bg-[#11040E]">
 
         {/* Top CTA Section */}
-        <div className="py-10 border-b border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-center md:text-left">
+        <div className=" px-[24px] lg:px-[64px] py-10 border-b-2 border-[#C4C4C4] bg-[#1D0617] flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between gap-6">
+          <div className="text-left">
             <p className="text-sm font-medium text-white/80 mb-2">Ready to be a part of something extraordinary?</p>
-            <h2 className="text-2xl sm:text-3xl font-bold font-nunito max-w-lg">Let&apos;s work together to create a difference</h2>
+            <h2 className="md:text-[32px] text-[20px] font-bold font-nunito">Let&apos;s work together to create a difference</h2>
           </div>
           <Link
             href="#contact"
-            className="px-10 py-3.5 rounded-lg bg-[#661E4E] text-white font-bold text-sm hover:opacity-90 transition-opacity"
+            className="px-10 py-3.5 rounded-[4px] bg-[#571244] text-white font-bold text-sm hover:opacity-90 transition-opacity"
           >
             Get In Touch
           </Link>
         </div>
 
         {/* Main Footer Content */}
-        <div className="py-16">
+        <div className="px-6 sm:px-12 lg:px-[64px] py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-12">
 
             {/* Brand column */}
@@ -65,7 +65,7 @@ export default function Footer() {
                   alt="Tobams Group"
                   width={160}
                   height={44}
-                  className="h-10 w-auto object-contain"
+                  className="h-[72px] w-[188px] object-contain scale-[170%]"
                 />
               </Link>
               <p className="text-sm text-white/70 leading-relaxed max-w-xs">
@@ -122,12 +122,12 @@ export default function Footer() {
 
           </div>
 
-          <div className="mt-16 bg-[#1D0A14] rounded-xl p-8 sm:p-12 border border-white/5">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr_1fr] gap-12">
+          <div className="mt-16 bg-[#FFFFFF0F] rounded-xl p-8 border border-white/5">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr_1fr] md:gap-12">
 
               {/* Offices column */}
-              <div className="text-center lg:text-left">
-                <h3 className="text-lg font-bold mb-8">Registered Offices</h3>
+              <div className="text-left">
+                <h3 className="text-lg font-bold mb-3">Registered Offices</h3>
                 <div className="space-y-8">
                   <div>
                     <p className="text-[#EF4353] font-bold text-xs uppercase tracking-widest mb-3">United Kingdom</p>
@@ -140,7 +140,7 @@ export default function Footer() {
               </div>
 
               {/* Nigeria Office column */}
-              <div className="border-t border-white/10 lg:border-t-0 lg:border-l lg:pl-12 pt-10 lg:pt-0 text-center lg:text-left">
+              <div className=" border-white/10 lg:border-l lg:pl-12 pt-10 lg:pt-10 text-left">
                 <div className="space-y-8">
                   <div>
                     <p className="text-[#EF4353] font-bold text-xs uppercase tracking-widest mb-3">Nigeria</p>
@@ -153,9 +153,9 @@ export default function Footer() {
               </div>
 
               {/* Contact column */}
-              <div className="border-t border-white/10 lg:border-t-0 lg:border-l lg:pl-12 pt-10 lg:pt-0 text-center lg:text-left">
-                <h3 className="text-lg font-bold mb-8">Contact Information</h3>
-                <div className="space-y-6 flex flex-col items-center lg:items-start">
+              <div className=" border-white/10 lg:border-l lg:pl-12 pt-10 lg:pt-0 text-left">
+                <h3 className="text-lg font-bold mb-3">Contact Information</h3>
+                <div className="space-y-4 flex flex-col items-start">
                   <a href="mailto:theteam@tobamsgroup.com" className="flex items-center gap-4 text-white/80 hover:text-white group">
                     <div className="w-5 h-5 flex items-center justify-center text-[#EF4353]">
                       <svg fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>
@@ -175,11 +175,11 @@ export default function Footer() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="mt-16 pt-8 border-t border-white/10 flex flex-col-reverse md:flex-row items-center justify-between gap-6">
             <p className="text-sm text-white/50">
               Copyright © Tobams Group, 2024. All rights reserved.
             </p>
-            <div className="flex gap-8">
+            <div className="flex flex-wrap max-md:justify-center gap-8">
               <Link href="#" className="text-sm text-white/50 hover:text-white transition-colors underline underline-offset-4 decoration-white/20">Terms and Conditions</Link>
               <Link href="#" className="text-sm text-white/50 hover:text-white transition-colors underline underline-offset-4 decoration-white/20">Privacy Policy</Link>
               <Link href="#" className="text-sm text-white/50 hover:text-white transition-colors underline underline-offset-4 decoration-white/20">Cookies Policy</Link>

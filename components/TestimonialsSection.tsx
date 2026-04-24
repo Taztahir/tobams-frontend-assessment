@@ -68,7 +68,7 @@ export default function TestimonialsSection() {
   const prev = () => setActiveIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
 
   return (
-    <section id="testimonials" className="py-24 bg-white overflow-hidden">
+    <section id="testimonials" className="py-10 bg-white overflow-hidden">
       <div className="mx-6 sm:mx-12 lg:mx-[64px]">
         <h2 className="text-5xl font-bold text-center mb-20 font-nunito text-[#1A1A1A]">Testimonials</h2>
 
@@ -81,7 +81,7 @@ export default function TestimonialsSection() {
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="bg-white p-10 rounded-[40px] border-l-2 border-t-2 border-[#EF4353] shadow-[0_10px_40px_rgba(0,0,0,0.04)] relative transition-all hover:shadow-lg"
+                className="bg-white p-10 rounded-[16px] border-l-2 border-[#EF4353] shadow-[0_10px_40px_rgba(0,0,0,0.04)] relative transition-all hover:shadow-lg"
                 style={{ width: `calc(${100 / testimonials.length}% - 2rem)` }}
               >
                 {/* Header: Avatar + Info */}

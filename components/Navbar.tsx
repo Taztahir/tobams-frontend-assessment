@@ -21,16 +21,16 @@ export default function Navbar() {
   return (
     <header className="w-full bg-white relative z-50 shadow-sm">
       {/* Top Tier */}
-      <div className="mx-6 sm:mx-12 lg:mx-[64px] py-6 flex items-center justify-between">
+      <div className="mx-6 sm:mx-12 lg:mx-[64px] flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <Image
             src="/TobamsLogo.png"
             alt="Tobams Group"
-            width={160}
-            height={44}
+            width={165}
+            height={64}
             priority
-            className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
+            className="md:w-auto object-contain "
           />
         </Link>
 

@@ -16,8 +16,8 @@ export default function Home() {
       <ManagementDevelopmentSection />
       <TransformationHubSection />
       <TrainingConsultantSection />
-      <TestimonialsSection />
       <CTASection />
+      <TestimonialsSection />
     </>
   );
 }

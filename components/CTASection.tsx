@@ -20,7 +20,7 @@ export default function CTASection() {
 
         <Link
           href="#book-consultation"
-          className="inline-flex items-center justify-center px-12 py-4 rounded-lg bg-white text-[#4B0D37] font-bold text-lg hover:bg-white/90 transition-all duration-200 shadow-lg active:scale-95"
+          className="inline-flex items-center justify-center px-12 py-4 rounded-lg bg-white text-[#4B0D37] font-semibold text-[14px] md:text-[18px] hover:bg-white/90 transition-all duration-200 shadow-lg active:scale-95"
         >
           Book a Consultation
         </Link>

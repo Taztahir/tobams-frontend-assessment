@@ -27,10 +27,10 @@ export default function Navbar() {
           <Image
             src="/TobamsLogo.png"
             alt="Tobams Group"
-            width={130}
-            height={60}
+            width={165}
+            height={64}
             priority
-            className="md:w-auto w-auto object-contain scale-95"
+            className="h-24 lg:h-28 w-auto object-contain"
           />
         </Link>
 

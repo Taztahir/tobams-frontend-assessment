@@ -15,10 +15,10 @@ export default function AcademySection() {
   return (
     <section
       id="what-we-do"
-      className="py-20 bg-[#F3F0F4]"
+      className="py-20 my-10 bg-[#F3F0F4]"
       aria-labelledby="academy-heading"
     >
-      <div className="mx-6 sm:mx-12 lg:mx-[64px] min-h-[664px]">
+      <div className="mx-6 sm:mx-12 lg:mx-[64px]">
         {/* Mobile Heading */}
         <h2
           id="academy-heading"

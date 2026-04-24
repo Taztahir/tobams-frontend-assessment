@@ -4,10 +4,10 @@ export default function CTASection() {
   return (
     <section
       id="book-consultation"
-      className="py-10"
+      className="py-10 bg-[#F9F9F9]"
       aria-labelledby="cta-heading"
     >
-      <div className="mx-6 sm:mx-12 lg:mx-[120px] bg-[#4B0D37] rounded-[8px] md:py-[32px] text-center flex flex-col items-center">
+      <div className="mx-6 sm:mx-12 lg:mx-[120px] bg-[#4B0D37] rounded-[8px] max-md:px-[24px] py-[32px] text-center flex flex-col items-center">
         <h2
           id="cta-heading"
           className="text-white lg:text-[20px] font-medium mb-3 max-w-4xl"

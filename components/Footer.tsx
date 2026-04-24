@@ -176,13 +176,13 @@ export default function Footer() {
 
           {/* Bottom Bar */}
           <div className="mt-16 pt-8 border-t border-white/10 flex flex-col-reverse md:flex-row items-center justify-between gap-6">
-            <p className="text-sm text-white/50">
+            <p className="text-sm text-white">
               Copyright © Tobams Group, 2024. All rights reserved.
             </p>
             <div className="flex flex-wrap max-md:justify-center gap-8">
-              <Link href="#" className="text-sm text-white/50 hover:text-white transition-colors underline underline-offset-4 decoration-white/20">Terms and Conditions</Link>
-              <Link href="#" className="text-sm text-white/50 hover:text-white transition-colors underline underline-offset-4 decoration-white/20">Privacy Policy</Link>
-              <Link href="#" className="text-sm text-white/50 hover:text-white transition-colors underline underline-offset-4 decoration-white/20">Cookies Policy</Link>
+              <Link href="#" className="text-sm text-white hover:text-white transition-colors underline underline-offset-4 decoration-white">Terms and Conditions</Link>
+              <Link href="#" className="text-sm text-white hover:text-white transition-colors underline underline-offset-4 decoration-white">Privacy Policy</Link>
+              <Link href="#" className="text-sm text-white hover:text-white transition-colors underline underline-offset-4 decoration-white">Cookies Policy</Link>
             </div>
           </div>
 

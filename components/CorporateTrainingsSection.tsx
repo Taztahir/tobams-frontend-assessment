@@ -10,15 +10,15 @@ const LightningIcon = () => (
 );
 
 const Section = ({ title, description, list, image, reverse = false, roundedClass = "rounded-[32px]" }: { title: string, description: string, list: string[], image: string | StaticImageData, reverse?: boolean, roundedClass?: string }) => (
-  <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 lg:gap-20 mb-24 last:mb-0`}>
+  <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 lg:gap-20 last:mb-0 mb-10 lg:mb-20`}>
     {/* Mobile Heading */}
-    <h2 className="lg:hidden text-2xl sm:text-3xl font-bold text-[#1A1A1A] font-nunito text-center">
+    <h2 className="lg:hidden text-2xl sm:text-3xl font-bold text-[#1A1A1A] font-nunito text-left">
       {title}
     </h2>
 
     {/* Image Column */}
     <div className="w-full lg:w-1/2 order-1 lg:order-0">
-      <div className={`relative aspect-[16/10] ${roundedClass} overflow-hidden shadow-lg`}>
+      <div className={`relative h-[229px] md:h-[364px] ${roundedClass} overflow-hidden shadow-lg`}>
         <Image
           src={image}
           alt={title}
@@ -29,14 +29,14 @@ const Section = ({ title, description, list, image, reverse = false, roundedClas
     </div>
 
     {/* Content Column */}
-    <div className="flex-1 order-2 lg:order-0">
-      <h2 className="hidden lg:block text-[40px] font-bold text-[#1A1A1A] mb-6 font-nunito leading-tight">
+    <div className="flex-1 order-2 lg:order-0 space-y-6">
+      <h2 className="hidden lg:block text-[40px] font-bold text-[#1A1A1A] font-nunito leading-tight">
         {title}
       </h2>
-      <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl text-center lg:text-left">
+      <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-2xl text-left">
         {description}
       </p>
-      <ul className="space-y-4 max-w-lg mx-auto lg:mx-0">
+      <ul className="space-y-1 max-w-lg mx-auto lg:mx-0">
         {list.map((item) => (
           <li key={item} className="flex items-center gap-3">
             <LightningIcon />
@@ -66,7 +66,7 @@ export default function TrainingServices() {
           ]}
           image={CorporateTrainingImage}
           reverse
-          roundedClass="rounded-tr-[80px] rounded-bl-[80px]"
+          roundedClass="rounded-tl-[56px] rounded-br-[23px] rounded-tr-[24px] rounded-bl-[12px]"
         />
 
         {/* Personalised Individual Training */}
@@ -82,7 +82,7 @@ export default function TrainingServices() {
             "Career Development"
           ]}
           image={PersonlizedTrainingImage}
-          roundedClass="rounded-tl-[80px] rounded-br-[80px]"
+          roundedClass="rounded-tl-[33px] rounded-tr-[8px] rounded-bl-[8px] rounded-br-[8px]"
         />
 
         {/* Capacity Development */}
@@ -99,7 +99,7 @@ export default function TrainingServices() {
           ]}
           image={CapacityDevelopmentImage}
           reverse
-          roundedClass="rounded-[40px] rounded-tr-none"
+          roundedClass="rounded-tl-[40px] rounded-tr-[8px] rounded-bl-[8px] rounded-br-[40px]"
         />
       </div>
     </section>

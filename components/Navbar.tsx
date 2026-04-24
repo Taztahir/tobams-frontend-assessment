@@ -55,15 +55,15 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden w-12 h-12 bg-black rounded-xl flex flex-col items-center justify-center gap-1.5 hover:opacity-90 transition-opacity"
+          className="lg:hidden w-8 h-8 bg-black rounded-xl flex flex-col items-center justify-center gap-1.5 hover:opacity-90 transition-opacity"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
         >
           <span className="sr-only">Open menu</span>
-          <div className={`w-6 h-0.5 bg-white rounded-full transition-all ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}></div>
-          <div className={`w-6 h-0.5 bg-white rounded-full transition-all ${isMenuOpen ? "opacity-0" : ""}`}></div>
-          <div className={`w-6 h-0.5 bg-white rounded-full transition-all ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}></div>
+          <div className={`w-5 h-0.5 bg-white rounded-full transition-all ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}></div>
+          <div className={`w-5 h-0.5 bg-white rounded-full transition-all ${isMenuOpen ? "opacity-0" : ""}`}></div>
+          <div className={`w-5 h-0.5 bg-white rounded-full transition-all ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}></div>
         </button>
       </div>
 

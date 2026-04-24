@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import TestimonialAvatar1 from '../public/Testimonial1.png';
+import TestimonialAvatar2 from '../public/Testimonial2.png';
+import TestimonialAvatar3 from '../public/Testimonial3.png';
 
 const testimonials = [
   {
@@ -12,7 +15,7 @@ const testimonials = [
         Working with <span className="font-bold">Tobams Group</span> on our website was a <span className="font-bold">breeze</span>. They <span className="font-bold">understood</span> our vision and transformed it into a beautiful <span className="font-bold">online space</span>. Highly recommend their <span className="font-bold">Website Design</span> service!
       </>
     ),
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+    avatar: TestimonialAvatar2,
   },
   {
     name: "John Davies",
@@ -22,7 +25,7 @@ const testimonials = [
         Tobams Group&apos;s Digital Marketing strategies gave our brand the <span className="font-bold">boost it needed</span>. Simple yet powerful <span className="font-bold">techniques</span> that delivered <span className="font-bold">tangible results</span>. A pleasure to collaborate with!
       </>
     ),
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+    avatar: TestimonialAvatar3,
   },
   {
     name: "Chinonso Nwankwo",
@@ -32,7 +35,7 @@ const testimonials = [
         Tobams Group has been <span className="font-bold">instrumental</span> in our talent <span className="font-bold">acquisition</span> journey. Their Tech Talent Solution service consistently connects us with the <span className="font-bold">right professionals</span>. Reliable and <span className="font-bold">straightforward</span>.
       </>
     ),
-    avatar: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&q=80",
+    avatar: TestimonialAvatar1,
   },
   {
     name: "Sarah Jenkins",
@@ -68,7 +71,7 @@ export default function TestimonialsSection() {
   const prev = () => setActiveIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
 
   return (
-    <section id="testimonials" className="py-10 bg-white overflow-hidden">
+    <section id="testimonials" className="py-10 bg-[#F9F9F9] overflow-hidden">
       <div className="mx-6 sm:mx-12 lg:mx-[64px]">
         <h2 className="text-5xl font-bold text-center mb-20 font-nunito text-[#1A1A1A]">Testimonials</h2>
 
@@ -86,7 +89,7 @@ export default function TestimonialsSection() {
               >
                 {/* Header: Avatar + Info */}
                 <div className="flex items-center gap-5 mb-8">
-                  <div className="relative w-16 h-16 rounded-full overflow-hidden border-[6px] border-[#FFD233]">
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden">
                     <Image
                       src={t.avatar}
                       alt={t.name}

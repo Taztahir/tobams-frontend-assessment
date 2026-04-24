@@ -28,28 +28,28 @@ export default function TrainingConsultantSection() {
     >
       <div className="mx-6 sm:mx-12 lg:mx-[64px]">
         {/* Header Area */}
-        <div className="mb-12">
+        <div className="mb-6">
           <h2
             id="consultant-heading"
-            className="text-4xl sm:text-5xl font-bold text-[#4B0D37] mb-4 font-nunito"
+            className="text-[24px] sm:text-[40px] font-bold text-[#571244] font-nunito"
           >
             Training The Consultant
           </h2>
-          <p className="text-[#4B0D37] text-lg font-medium mb-8">
+          <p className="text-[#571244] text-[16px] md:text-lg font-medium mb-4">
             Maximise Your Potential as a Certified Trainer:
           </p>
-          <p className="text-gray-800 text-sm sm:text-base leading-relaxed max-w-6xl">
-            With the <span className="font-bold">help</span> of our Training Consultants program, take a revolutionary step toward becoming a <span className="font-bold">distinguished</span> certified training consultant. Learn from professionals in the field, immerse yourself in a thorough curriculum, and hone your training methods through interactive workshops. Participating in our program will enable you to <span className="font-bold">gain expertise</span> in diverse courses while also <span className="font-bold">developing</span> the abilities to mentor and encourage others in their <span className="font-bold">career advancement</span>.
+          <p className="text-gray-800 text-sm md:text-[18px] leading-relaxed">
+            With the help of our Training Consultants program, take a revolutionary step toward becoming a distinguished certified training consultant. Learn from professionals in the field, immerse yourself in a thorough curriculum, and hone your training methods through interactive workshops. Participating in our program will enable you to gain expertise in diverse courses while also developing the abilities to mentor and encourage others in their career advancement.
           </p>
         </div>
 
         {/* Benefit Grid Box */}
-        <div className="bg-[#4B0D37] rounded-xl p-8 sm:p-12 mb-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10">
+        <div className="bg-[#4B0D37] rounded-xl p-6 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-5">
             {benefits.map((benefit) => (
               <div key={benefit.title} className="space-y-3">
-                <h3 className="text-white font-bold text-lg">{benefit.title}</h3>
-                <p className="text-white/80 text-sm leading-relaxed">
+                <h3 className="text-white font-semibold text-[16px] md:text-[18px]">{benefit.title}</h3>
+                <p className="text-white text-sm md:text-[18px] leading-relaxed">
                   {benefit.description}
                 </p>
               </div>

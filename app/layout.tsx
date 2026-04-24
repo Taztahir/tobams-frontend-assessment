@@ -31,6 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${nunitoSans.variable} ${nunito.variable} font-sans antialiased`}
+        suppressHydrationWarning
       >
         <Navbar />
         <main id="main-content">{children}</main>

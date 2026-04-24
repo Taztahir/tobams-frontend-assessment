@@ -10,7 +10,7 @@ const LightningIcon = () => (
 );
 
 const Section = ({ title, description, list, image, reverse = false, roundedClass = "rounded-[32px]" }: { title: string, description: string, list: string[], image: string | StaticImageData, reverse?: boolean, roundedClass?: string }) => (
-  <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 lg:gap-20 last:mb-0 mb-10 lg:mb-20`}>
+  <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 lg:gap-20 last:mb-0 mb-10 lg:mb-32`}>
     {/* Mobile Heading */}
     <h2 className="lg:hidden text-2xl sm:text-3xl font-bold text-[#1A1A1A] font-nunito text-left">
       {title}

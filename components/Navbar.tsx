@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
+import personIcon from "../public/Vector.png"
 const navLinks = [
   { name: "About", href: "#about", hasDropdown: true },
   { name: "What We Do", href: "#what-we-do", hasDropdown: true },
@@ -27,20 +27,18 @@ export default function Navbar() {
           <Image
             src="/TobamsLogo.png"
             alt="Tobams Group"
-            width={165}
-            height={64}
+            width={130}
+            height={60}
             priority
-            className="md:w-auto object-contain "
+            className="md:w-auto w-auto object-contain scale-95"
           />
         </Link>
 
         {/* Top Buttons (Desktop) */}
         <div className="hidden lg:flex items-center gap-4">
           <button className="flex items-center gap-2 px-5 py-2.5 rounded-md bg-[#4B0D37] text-white font-medium text-sm hover:opacity-90 transition-all active:scale-95">
-            <div className="w-6 h-6 rounded-full bg-[#DDD0DA] flex items-center justify-center">
-              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-              </svg>
+            <div className="w-6 h-6 rounded-full bg-[#DDD0DA] flex items-center justify-center overflow-hidden">
+              <Image src={personIcon} alt="Account" width={12} height={12} />
             </div>
             <span>Account</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -77,7 +75,7 @@ export default function Navbar() {
                 href={link.href}
                 className={`flex items-center gap-1.5 text-[18px] whitespace-nowrap transition-colors duration-200 hover:text-[#4B0D37] ${link.name === "About"
                   ? "text-[#4B0D37] font-bold border-b-2 border-[#4B0D37]"
-                  : "text-gray-700 font-medium"
+                  : "text-[#151515]"
                   }`}
               >
                 {link.name}

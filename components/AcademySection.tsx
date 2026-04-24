@@ -22,7 +22,7 @@ export default function AcademySection() {
         {/* Mobile Heading */}
         <h2
           id="academy-heading"
-          className="lg:hidden text-3xl sm:text-4xl font-extrabold text-[#661E4E] leading-tight mb-8 font-nunito text-center"
+          className="lg:hidden text-[20px] sm:text-4xl font-semibold text-[#661E4E] leading-tight mb-8 font-nunito"
         >
           Learning Management System
         </h2>

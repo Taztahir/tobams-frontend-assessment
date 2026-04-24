@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import TestimonialAvatar1 from '../public/Testimonial1.png';
 import TestimonialAvatar2 from '../public/Testimonial2.png';
@@ -12,7 +12,7 @@ const testimonials = [
     role: "Founder, CraftHub NG",
     content: (
       <>
-        Working with <span className="font-bold">Tobams Group</span> on our website was a <span className="font-bold">breeze</span>. They <span className="font-bold">understood</span> our vision and transformed it into a beautiful <span className="font-bold">online space</span>. Highly recommend their <span className="font-bold">Website Design</span> service!
+        Working with Tobams Group on our website was a breeze. They understood our vision and transformed it into a beautiful online space. Highly recommend their Website Design service!
       </>
     ),
     avatar: TestimonialAvatar2,
@@ -22,7 +22,7 @@ const testimonials = [
     role: "Marketing Manager, E-Commerce Emporium",
     content: (
       <>
-        Tobams Group&apos;s Digital Marketing strategies gave our brand the <span className="font-bold">boost it needed</span>. Simple yet powerful <span className="font-bold">techniques</span> that delivered <span className="font-bold">tangible results</span>. A pleasure to collaborate with!
+        Tobams Group's Digital Marketing strategies gave our brand the boost it needed. Simple yet powerful techniques that delivered tangible results. A pleasure to collaborate with!
       </>
     ),
     avatar: TestimonialAvatar3,
@@ -32,7 +32,7 @@ const testimonials = [
     role: "HR Director, FutureTech Solutions",
     content: (
       <>
-        Tobams Group has been <span className="font-bold">instrumental</span> in our talent <span className="font-bold">acquisition</span> journey. Their Tech Talent Solution service consistently connects us with the <span className="font-bold">right professionals</span>. Reliable and <span className="font-bold">straightforward</span>.
+        Tobams Group has been instrumental in our talent acquisition journey. Their Tech Talent Solution service consistently connects us with the right professionals. Reliable and straightforward.
       </>
     ),
     avatar: TestimonialAvatar1,
@@ -42,7 +42,7 @@ const testimonials = [
     role: "CEO, TechInnovate",
     content: (
       <>
-        The <span className="font-bold">Transformation Hub</span> provided exactly the <span className="font-bold">strategic edge</span> we were looking for. Their team is <span className="font-bold">exceptionally skilled</span> and dedicated to client <span className="font-bold">success</span>.
+        The Creative and Digital Media services at Tobams Group brought our ideas to life. Simple, creative, and impactful – exactly what we needed for our projects.
       </>
     ),
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
@@ -65,31 +65,51 @@ export default function TestimonialsSection() {
     return () => window.removeEventListener("resize", updateItemsPerView);
   }, []);
 
-  const maxIndex = Math.max(0, testimonials.length - itemsPerView);
+  const maxIndex = testimonials.length - 1;
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const next = () => setActiveIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-  const prev = () => setActiveIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+  const scrollToIndex = (index: number) => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const itemWidth = container.querySelector('div')?.offsetWidth || 0;
+    const gap = 32; // gap-8
+    container.scrollTo({
+      left: index * (itemWidth + gap),
+      behavior: 'smooth'
+    });
+    setActiveIndex(index);
+  };
+
+  const next = () => {
+    const nextIndex = activeIndex >= maxIndex ? 0 : activeIndex + 1;
+    scrollToIndex(nextIndex);
+  };
+
+  const prev = () => {
+    const prevIndex = activeIndex <= 0 ? maxIndex : activeIndex - 1;
+    scrollToIndex(prevIndex);
+  };
 
   return (
-    <section id="testimonials" className="py-10 bg-[#F9F9F9] overflow-hidden">
+    <section id="testimonials" className="py-[64px] bg-[#F9F9F9] overflow-hidden">
       <div className="mx-6 sm:mx-12 lg:mx-[64px]">
-        <h2 className="text-5xl font-bold text-center mb-20 font-nunito text-[#1A1A1A]">Testimonials</h2>
+        <h2 className="text-[20px] md:text-[40px] font-bold text-center mb-[40px] font-nunito text-[#1A1A1A]">Testimonials</h2>
 
         <div className="relative">
           {/* Slider Container */}
           <div
-            className="flex transition-transform duration-500 ease-out gap-8"
-            style={{ transform: `translateX(-${activeIndex * (100 / itemsPerView)}%)`, width: `${(testimonials.length / itemsPerView) * 100}%` }}
+            ref={scrollRef}
+            className="flex overflow-x-auto snap-x snap-mandatory gap-8 no-scrollbar scroll-smooth pb-4"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="bg-white p-10 rounded-[16px] border-l-2 border-[#EF4353] shadow-[0_10px_40px_rgba(0,0,0,0.04)] relative transition-all hover:shadow-lg"
-                style={{ width: `calc(${100 / testimonials.length}% - 2rem)` }}
+                className="bg-white py-[32px] px-[24px] rounded-[16px] border-l-2 border-[#EF4353] shadow-[0_10px_40px_rgba(0,0,0,0.04)] relative transition-all hover:shadow-lg flex-shrink-0 snap-center w-[85%] md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)]"
               >
                 {/* Header: Avatar + Info */}
                 <div className="flex items-center gap-5 mb-8">
-                  <div className="relative w-16 h-16 rounded-full overflow-hidden">
+                  <div className="relative w-[44px] h-[44px] rounded-full overflow-hidden">
                     <Image
                       src={t.avatar}
                       alt={t.name}
@@ -98,13 +118,13 @@ export default function TestimonialsSection() {
                     />
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#1A1A1A] text-lg">{t.name}</h3>
-                    <p className="text-[#666666] text-sm">{t.role}</p>
+                    <h3 className="font-bold text-[#1A1A1A] text-[14px] md:text-lg">{t.name}</h3>
+                    <p className="text-[#696969] text-[12px] md:text-[14px]">{t.role}</p>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="text-[#333333] text-base leading-relaxed">
+                <div className="text-[#333333] text-[14px] md:text-[18px] leading-relaxed italic">
                   {t.content}
                 </div>
               </div>
@@ -112,10 +132,10 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Carousel Controls */}
-          <div className="flex justify-end gap-4 mt-12 px-4">
+          <div className="flex justify-center md:justify-end gap-4 mt-8 px-4">
             <button
               onClick={prev}
-              className="w-10 h-10 rounded-lg bg-[#FFF1F2] flex items-center justify-center text-[#EF4353] hover:bg-[#FFE4E6] transition-colors shadow-sm"
+              className="w-[32px] h-[32px] rounded-[8px] bg-[#F043541A] flex items-center justify-center text-[#EF4353] hover:bg-[#EF4353] hover:text-white transition-all shadow-sm"
               aria-label="Previous testimonial"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -124,7 +144,7 @@ export default function TestimonialsSection() {
             </button>
             <button
               onClick={next}
-              className="w-10 h-10 rounded-lg bg-[#FFF1F2] flex items-center justify-center text-[#EF4353] hover:bg-[#FFE4E6] transition-colors shadow-sm"
+              className="w-[32px] h-[32px] rounded-[8px] bg-[#F043541A] flex items-center justify-center text-[#EF4353] hover:bg-[#EF4353] hover:text-white transition-all shadow-sm"
               aria-label="Next testimonial"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
